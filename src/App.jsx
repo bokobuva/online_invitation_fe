@@ -14,7 +14,10 @@ function App() {
   console.log(isGuestPlural);
   const handleAccept = () => {
     fetch(
-      `https://online-invitation-be.onrender.com/accept/${guestName}.replace(" ", "_")`
+      `https://online-invitation-be.onrender.com/accept/${guestName.replace(
+        " ",
+        "_"
+      )}`
     )
       .then((response) => {
         if (response.status !== 200) {
