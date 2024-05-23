@@ -13,7 +13,9 @@ function App() {
 
   console.log(isGuestPlural);
   const handleAccept = () => {
-    fetch(`https://online-invitation-be.onrender.com/${guestName}`)
+    fetch(
+      `https://online-invitation-be.onrender.com/accept/${guestName}.replace(" ", "_")`
+    )
       .then((response) => {
         if (response.status !== 200) {
           return setIsError(true);
@@ -26,7 +28,12 @@ function App() {
       });
   };
   const handleDeny = () => {
-    fetch(`https://online-invitation-be.onrender.com/${guestName}`)
+    fetch(
+      `https://online-invitation-be.onrender.com/deny/${guestName.replace(
+        " ",
+        "_"
+      )}`
+    )
       .then((response) => {
         if (response.status !== 200) {
           console.log(response.status);

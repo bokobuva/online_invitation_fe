@@ -17,7 +17,7 @@ const GuestList = () => {
         <ol>
           {guestList.accepted.length > 0 &&
             guestList.accepted.map((acceptedGuest, index) => {
-              return <li key={index}>{acceptedGuest}</li>;
+              return <li key={index}>{acceptedGuest.replace(/_/g, " ")}</li>;
             })}
         </ol>
       </div>
