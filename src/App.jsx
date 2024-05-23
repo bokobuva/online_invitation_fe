@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "./App.css";
+import { Link } from "react-router-dom";
 
 function App() {
   const [isSuccess, setIsSuccess] = useState(false);
@@ -40,6 +41,7 @@ function App() {
     <main className="main">
       <div className="mainActionContainer">
         <div className="overlay"></div>
+        <Link to="/list">List</Link>
         {isError ? (
           <div className="errorContainer">
             <p>
