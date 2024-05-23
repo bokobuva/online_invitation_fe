@@ -3,16 +3,12 @@ import { useEffect, useState } from "react";
 const GuestList = () => {
   const [guestList, setGuestList] = useState({ accepted: [], denied: [] });
   useEffect(() => {
-    fetch("http://localhost:8080/")
+    fetch("https://online-invitation-be.onrender.com/")
       .then((response) => response.json())
       .then((response) => {
         setGuestList(response);
       });
   }, [setGuestList]);
-
-  useEffect(() => {
-    console.log(guestList);
-  }, [guestList]);
   return (
     <main>
       <div className="guestListContainer">

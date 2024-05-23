@@ -1,6 +1,5 @@
 import { useState } from "react";
 import "./App.css";
-import { useEffect } from "react";
 
 function App() {
   const [isSuccess, setIsSuccess] = useState(false);
@@ -13,7 +12,7 @@ function App() {
 
   console.log(isGuestPlural);
   const handleAccept = () => {
-    fetch(`http://localhost:8080/accept/${guestName}`)
+    fetch(`https://online-invitation-be.onrender.com/${guestName}`)
       .then((response) => {
         if (response.status !== 200) {
           return setIsError(true);
@@ -26,7 +25,7 @@ function App() {
       });
   };
   const handleDeny = () => {
-    fetch(`http://localhost:8080/deny/${guestName}`)
+    fetch(`https://online-invitation-be.onrender.com/${guestName}`)
       .then((response) => {
         if (response.status !== 200) {
           console.log(response.status);
@@ -37,10 +36,6 @@ function App() {
       })
       .catch(() => setIsError(true));
   };
-
-  useEffect(() => {
-    console.log(isError);
-  }, [isError]);
   return (
     <main className="main">
       <div className="mainActionContainer">
