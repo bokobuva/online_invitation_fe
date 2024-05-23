@@ -41,7 +41,6 @@ function App() {
     <main className="main">
       <div className="mainActionContainer">
         <div className="overlay"></div>
-        <Link to="/list">List</Link>
         {isError ? (
           <div className="errorContainer">
             <p>
@@ -57,6 +56,7 @@ function App() {
           </div>
         ) : (
           <div className="invitationContainer">
+            <Link to="/list">List</Link>
             <h4>Здраво {guestName}</h4>
             <h4>Илин {isGuestPlural ? "ве" : "те"} поканува на неговиот</h4>
             <h2>5-ти РОДЕНДЕН</h2>
